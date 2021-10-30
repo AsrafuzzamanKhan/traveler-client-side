@@ -1,0 +1,38 @@
+[
+    {
+        "key": 1,
+        "name": "Adventure",
+        "destination": "15 Destination",
+        "img": "https://i.ibb.co/X7XfLTq/icon6.png"
+    },
+    {
+        "key": 2,
+        "name": "Trekking",
+        "destination": "12 Destination",
+        "img": "https://i.ibb.co/mHYf6GW/trak.png"
+    },
+    {
+        "key": 3,
+        "name": "Camp Fire",
+        "destination": "10 Destination",
+        "img": "https://i.ibb.co/rQn9Dm9/camp.png"
+    },
+    {
+        "key": 4,
+        "name": "Off Road",
+        "destination": "8 Destination",
+        "img": "https://i.ibb.co/0mngMYK/icon8.png"
+    },
+    {
+        "key": 5,
+        "name": "Camping",
+        "destination": "11 Destination",
+        "img": "https://i.ibb.co/CJWrfzY/camping.png"
+    },
+    {
+        "key": 6,
+        "name": "Exploring",
+        "destination": "10 Destination",
+        "img": "https://i.ibb.co/vhypC75/exploring.png"
+    }
+]
