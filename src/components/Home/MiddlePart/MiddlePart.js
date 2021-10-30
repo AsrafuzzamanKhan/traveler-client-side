@@ -1,22 +1,26 @@
 import React from 'react';
-import middleimg from '../../../images/Middle/middle.jpg'
+import middleimg from '../../../images/Middle/middle.png'
+import './MiddlePart.css'
 const MiddlePart = () => {
     return (
-        <div>
-            <div className="m-5">
-                <div className="row">
-                    <div className="col-lg-6 col-sm-12">
-                        <img className="img-fluid" src={middleimg} alt="" />
+        <div className="background" >
+            <div className="container">
+                <div className="row d-flex justify-content-center  align-items-center">
+                    <div className="col-lg-6 col-sm-12 p-3">
+                        <img className="img-fluid w-75 mx-auto" src={middleimg} alt="" />
                     </div>
-                    <div className="col-lg-6 col-sm-12 p-2">
+                    <div className="col-lg-6 col-sm-12 p-3">
                         <h1>GO TRAVEL. DISCOVER. REMEMBER US!!</h1>
-                        <p>There are many different eye conditions; some are minor and easily treated but others can cause serious problems or lead to permanent loss of vision. We offer varying specialties, covering all aspects of the medical and surgical eye care, including cataract surgery.</p>
-                        <ul>
-                            <li>Drawing up an individual treatment program for patient.</li>
-                            <li>Performing all operations and proceds highest professional level.</li>
-                            <li>Compliance of materials equipment international standards.</li>
+
+                        <ul className="fw-bold">
+                            <li>Adventure</li>
+                            <li>Trekking</li>
+                            <li>Camp Fire</li>
+                            <li>Off Road</li>
+                            <li>Camping</li>
+                            <li>Exploring</li>
+
                         </ul>
-                        {/* <Link to='/services'><button className="btn btn-success">Visit services</button></Link> */}
                     </div>
                 </div>
             </div>

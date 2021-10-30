@@ -12,10 +12,10 @@ const Footer = () => {
                         <p>News</p>
                     </div>
                     <div className="col-lg-3">
-                        <p>Eye Surgery</p>
-                        <p>Home RTL</p>
-                        <p>Our Doctors</p>
-                        <p>Faqs</p>
+                        <p>Adventure</p>
+                        <p>Trekking</p>
+                        <p>Camp Fire</p>
+                        <p>Off Road</p>
                     </div>
                     <div className="col-lg-3">
                         <p>Terms</p>

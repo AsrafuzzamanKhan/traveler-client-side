@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
-    const { _id, title, image, day, cost, people } = props.pack;
+    const { _id, title, image, days, cost, people } = props.pack;
     return (
         <div>
 
@@ -11,7 +11,7 @@ const Package = (props) => {
                     <img src={image} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
-                        <p className="card-text">{day}</p>
+                        <p className="card-text">{days}</p>
                         <p className="card-text"> {cost} </p>
                         <p className="card-text">people:{people}</p>
                     </div>

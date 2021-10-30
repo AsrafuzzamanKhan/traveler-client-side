@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import './Packages.css';
 import Package from '../Package/Package';
 
 const Packages = () => {
@@ -13,7 +14,9 @@ const Packages = () => {
     }, [])
     return (
         <div>
+            <h1 className="heading-color">POPULAR PACKAGES</h1>
             <div className="container">
+
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         packages.map(pack => <Package

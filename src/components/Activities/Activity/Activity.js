@@ -6,9 +6,9 @@ const Activity = (props) => {
     return (
         <div>
             <div className="col">
-                <div className="card h-100">
-                    <img src={img} className="card-img-top" alt="..." />
-                    <div className="card-body">
+                <div className="card h-100 p-2">
+                    <img src={img} className="card-img-top w-50 mx-auto" alt="..." />
+                    <div className="card-body mx-auto">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{destination}</p>
                     </div>
