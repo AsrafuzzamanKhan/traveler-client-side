@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 const DeletePackage = () => {
     const [allPackage, setAllPackage] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/packages")
+        fetch("https://arcane-tundra-73847.herokuapp.com/packages")
             .then(res => res.json())
             .then(data => setAllPackage(data))
     }, []);
@@ -12,7 +12,7 @@ const DeletePackage = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/packages/${id}`;
+            const url = `https://arcane-tundra-73847.herokuapp.com/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

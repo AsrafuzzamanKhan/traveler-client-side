@@ -28,8 +28,7 @@ const Header = () => {
                                 <ul className="dropdown-menu bg-light" >
                                     <li className="px-2"><NavLink to={`/myBookings/${user.email}`}>My Bookings</NavLink></li>
                                     <li className="px-2"><NavLink to="/addPackage">Add package</NavLink></li>
-                                    <li className="px-2"><NavLink to="/deletePackage">Delete package</NavLink></li>
-                                    <li className="px-2"><NavLink to="/addPackage">Add package</NavLink></li>
+                                    <li className="px-2"><NavLink to="/deletePackage">Manage package</NavLink></li>
                                     <li className="px-2"><NavLink to="/manageAllOrders">Manage All Orders</NavLink></li>
                                 </ul>
                             </div>

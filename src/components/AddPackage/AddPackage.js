@@ -8,15 +8,8 @@ const AddPackage = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        // fetch('http://localhost:5000/addPackage', {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(data)
-        // })
 
-        axios.post('http://localhost:5000/addPackage', data)
+        axios.post('https://arcane-tundra-73847.herokuapp.com/addPackage', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully Added');

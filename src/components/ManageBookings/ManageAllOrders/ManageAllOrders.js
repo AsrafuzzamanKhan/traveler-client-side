@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const ManageAllOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
+    const { user } = useAuth();
+    const handleUpdate = id => {
+        const url = `https://arcane-tundra-73847.herokuapp.com/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+    }
+
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://arcane-tundra-73847.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setManageOrders(data))
     }, []);
 
-
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/manageAllBooking/${id}`, {
+            fetch(`https://arcane-tundra-73847.herokuapp.com/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -42,7 +54,7 @@ const ManageAllOrders = () => {
                             <th>Phone</th>
                             <th>Address</th>
                             <th>Booking place</th>
-                            <th>Login user</th>
+
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -50,7 +62,9 @@ const ManageAllOrders = () => {
                     {
                         manageOrders?.map((pd, index) =>
                         (
-                            <tbody>
+                            <tbody
+                                key={pd._id}
+                            >
                                 <tr>
                                     <td>{index + 1}</td>
                                     <td>{pd?.name}</td>
@@ -58,17 +72,20 @@ const ManageAllOrders = () => {
                                     <td>{pd?.phone}</td>
                                     <td>{pd?.address}</td>
                                     <td>{pd?.booked}</td>
-                                    <td>{pd?.loginEmail}</td>
-                                    {/* <td>{pd?.status}</td> */}
-                                    <td> <button className="btn btn-success"> Pending</button> </td>
+
+                                    {/* <td> <button onClick={() => handleStatus(pd.status)} className="btn btn-success"> Pending</button> </td> */}
+                                    <td>
+                                        {
+                                            pd?.status === "Pending" ?
+                                                <button onClick={() => handleUpdate(pd._id)} className="btn btn-warning">Pending</button>
+                                                :
+                                                <button className="btn btn-success">Approved</button>
+                                        } </td>
                                     <td><button onClick={() => handleDelete(pd._id)} className="btn btn-danger">Delete</button></td>
                                 </tr>
                             </tbody>
                         ))
                     }
-
-
-
                 </Table>
             </div>
         </div>

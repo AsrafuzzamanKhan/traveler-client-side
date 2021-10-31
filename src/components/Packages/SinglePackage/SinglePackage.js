@@ -10,16 +10,10 @@ const SinglePackage = () => {
     const { id } = useParams()
     const [singlePack, setSinglepack] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/packageDetails/${id}`)
+        fetch(`https://arcane-tundra-73847.herokuapp.com/${id}`)
             .then(res => res.json())
             .then(data => setSinglepack(data))
-    }, [id])
-    // const singleItem = singlePack.filter(single => single._id == id);
-    // console.log(singleItem)
-
-
-    // ------------------------------------
-
+    }, [id]);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
@@ -30,7 +24,7 @@ const SinglePackage = () => {
         const userEmail = `${user.email}`
         data.loginEmail = userEmail;
         console.log(data.email)
-        fetch(`http://localhost:5000/booking`, {
+        fetch(`https://arcane-tundra-73847.herokuapp.com/booking`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -58,7 +52,6 @@ const SinglePackage = () => {
                     </div>
                     <div className="col-lg-6 col-sm-12">
                         <h4>{singlePack.title}</h4>
-                        <h4>{singlePack._id}</h4>
                         <p>Cost: {singlePack.cost}</p>
                         <p>People: {singlePack.people}</p>
                         <p>Days: {singlePack.days}</p>

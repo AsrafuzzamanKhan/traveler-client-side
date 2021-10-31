@@ -7,7 +7,7 @@ import extraimg from '../../../images/extra/extra.jpg';
 const Activities = () => {
     const [activities, setActivities] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/activities')
+        fetch('https://arcane-tundra-73847.herokuapp.com/activities')
             .then(res => res.json())
             .then(data => setActivities(data))
     }, [])
