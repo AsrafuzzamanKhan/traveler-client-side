@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 import "./SinglePackage.css"
@@ -27,8 +26,10 @@ const SinglePackage = () => {
     const onSubmit = data => {
         const booking = singlePack.title;
         data.booked = booking;
-        data.status = "Pending"
-        console.log(data)
+        data.status = "Pending";
+        const userEmail = `${user.email}`
+        data.loginEmail = userEmail;
+        console.log(data.email)
         fetch(`http://localhost:5000/booking`, {
             method: "POST",
             headers: {
@@ -46,29 +47,31 @@ const SinglePackage = () => {
             })
     };
     return (
-        <div className="container">
+        <div >
 
 
-            <div className="row m-2 g-3 mb-5">
-                <div className="col-lg-6 col-sm-12">
+            <div className="container">
+                <div className="row m-2 g-3 mb-5">
+                    <div className="col-lg-6 col-sm-12">
 
-                    <img src={singlePack.image} alt="" />
-                </div>
-                <div className="col-lg-6 col-sm-12">
-                    <h4>{singlePack.title}</h4>
-                    <h4>{singlePack._id}</h4>
-                    <p>Cost: {singlePack.cost}</p>
-                    <p>People: {singlePack.people}</p>
-                    <p>Days: {singlePack.days}</p>
+                        <img className="img-fluid" src={singlePack.image} alt="" />
+                    </div>
+                    <div className="col-lg-6 col-sm-12">
+                        <h4>{singlePack.title}</h4>
+                        <h4>{singlePack._id}</h4>
+                        <p>Cost: {singlePack.cost}</p>
+                        <p>People: {singlePack.people}</p>
+                        <p>Days: {singlePack.days}</p>
+                        <p>{singlePack.description}</p>
 
-                    <Link to='/booking'><button className="btn btn-success">Book Now</button></Link>
+                    </div>
                 </div>
             </div>
 
             <div>
-                <h1>Booking</h1>
+                <h1 className="heading-color">BOOK YOUR TOUR PACKAGE</h1>
 
-                <div className="booking">
+                <div className="booking mb-5">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -82,8 +85,9 @@ const SinglePackage = () => {
                         <input {...register("address", { required: true })} placeholder="Address" />
                         <input {...register("city", { required: true })} placeholder="City" />
                         {errors.email && <span>This field is required</span>}
-                        <input type="submit" />
-                        {/* <Link to="/booking"> <small className="text-muted "><button className="btn btn-success w-100 " type="submit">Book Now</button></small></Link> */}
+
+                        <button type="submit" className="btn btn-success"> Submit </button>
+
                     </form>
                 </div>
 

@@ -15,19 +15,19 @@ const Banner = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={banner2} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                        <div className="carousel-caption d-none d-md-block mb-5 p-5">
                             <h1 className="fw-bold">TRAVELING AROUND THE WORLD</h1>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={banner1} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                        <div className="carousel-caption d-none d-md-block mb-5 p-5">
                             <h1 className="fw-bold">EXPERIENCE THE NATURAL BEAUTY</h1>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={banner3} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                        <div className="carousel-caption d-none d-md-block mb-5 p-5">
                             <h1 className="fw-bold">TRAVELING AROUND THE WORLD</h1>
                         </div>
                     </div>

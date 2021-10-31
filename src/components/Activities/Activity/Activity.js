@@ -1,6 +1,7 @@
 import React from 'react';
 import './Activity.css'
 
+
 const Activity = (props) => {
     const { img, name, destination } = props.activity;
     return (
@@ -12,9 +13,9 @@ const Activity = (props) => {
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{destination}</p>
                     </div>
-
                 </div>
             </div>
+
         </div>
     );
 };

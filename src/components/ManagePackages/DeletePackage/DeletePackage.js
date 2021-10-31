@@ -10,27 +10,27 @@ const DeletePackage = () => {
     }, []);
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/packages/${id}`;
-        fetch(url, {
-            method: "DELETE",
-
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount) {
-                    alert('Are you want to delete?')
-                    const remaining = allPackage.filter(pd => pd._id !== id);
-                    setAllPackage(remaining);
-
-                }
-
+        const proceed = window.confirm('Are you sure want to delete?');
+        if (proceed) {
+            const url = `http://localhost:5000/packages/${id}`;
+            fetch(url, {
+                method: "DELETE",
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        const remaining = allPackage.filter(pd => pd._id !== id);
+                        setAllPackage(remaining);
+                    }
+                });
+        }
+
     }
     return (
         <div>
-            <h1>Delete Package</h1>
-            <div>
+            <h1 className="heading-color">DELETE TOUR PACKAGE</h1>
+            <div className="container table-responsive">
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -40,6 +40,7 @@ const DeletePackage = () => {
                             <th>Cost</th>
                             <th>People</th>
                             <th>Days</th>
+                            <th>Description</th>
                             <th>Action</th>
 
                         </tr>
@@ -55,6 +56,7 @@ const DeletePackage = () => {
                                     <td>{pd?.cost}</td>
                                     <td>{pd?.people}</td>
                                     <td>{pd?.days}</td>
+                                    <td>{pd?.description}</td>
 
                                     <td><button className="btn btn-danger"
                                         onClick={() => handleDelete(pd._id)}>Delete</button></td>

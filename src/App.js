@@ -5,7 +5,9 @@ import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home/Home';
 import Login from './components/Home/Login/Login/Login';
 import ManageAllOrders from './components/ManageBookings/ManageAllOrders/ManageAllOrders';
+import MyBooking from './components/ManageBookings/MyBooking/MyBooking';
 import DeletePackage from './components/ManagePackages/DeletePackage/DeletePackage';
+import NotFound from './components/NotFound/NotFound';
 import Packages from './components/Packages/Packages/Packages';
 import SinglePackage from './components/Packages/SinglePackage/SinglePackage';
 import Footer from './components/Pages/Shared/Footer/Footer';
@@ -36,6 +38,9 @@ function App() {
             <PrivateRoute path="/packageDetails/:id">
               <SinglePackage></SinglePackage>
             </PrivateRoute>
+            <PrivateRoute path="/myBookings/:id">
+              <MyBooking></MyBooking>
+            </PrivateRoute>
             <PrivateRoute path="/addPackage">
               <AddPackage></AddPackage>
             </PrivateRoute>
@@ -48,6 +53,10 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+
           </Switch>
           <Footer></Footer>
         </Router>

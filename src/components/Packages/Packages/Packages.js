@@ -14,10 +14,10 @@ const Packages = () => {
     }, [])
     return (
         <div>
-            <h1 className="heading-color">POPULAR PACKAGES</h1>
+            <h1 className="heading-color">POPULAR TOUR PACKAGES</h1>
             <div className="container">
 
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4 mb-5">
                     {
                         packages.map(pack => <Package
                             key={pack._id}

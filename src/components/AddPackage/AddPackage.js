@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import './AddPackage.css'
+import img from '../../images/addtour/add.jpg'
 
 const AddPackage = () => {
 
@@ -25,23 +26,37 @@ const AddPackage = () => {
         console.log(data)
     };
     return (
-        <div>
+        <div >
+            <h1 className="text-center heading-color">ADD TOUR PACKAGE</h1>
+            <div className="container">
+                <div className="row d-flex justify-content-center  align-items-center my-3">
+                    <div className="col-lg-6 col-sm-12">
+                        <img className="img-fluid" src={img} alt="" />
+                    </div>
+                    <div className="col-lg-6 col-sm-12">
+                        <div className="addPackages border shadow p-5">
+                            <form onSubmit={handleSubmit(onSubmit)}>
 
-            <div className="addPackages">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                                <input {...register("title", { required: true })} placeholder="Title" />
 
-                    <input {...register("title", { required: true })} placeholder="Title" />
+                                <input {...register("cost", { required: true })} placeholder="Cost" />
 
-                    <input {...register("cost", { required: true })} placeholder="Cost" />
+                                <input type="number" {...register("people", { required: true })} placeholder="People" />
 
-                    <input type="number" {...register("people", { required: true })} placeholder="People" />
+                                <input {...register("days", { required: true })} placeholder="Days" />
+                                <input {...register("description", { required: true })} placeholder="Description" />
+                                <input {...register("image", { required: true })} placeholder="Image" />
 
-                    <input {...register("days", { required: true })} placeholder="Days" />
-                    <input {...register("image", { required: true })} placeholder="Image" />
-
-                    <input type="submit" />
-                </form>
+                                {/* <input type="submit" /> */}
+                                <button className="btn btn-success w-50" type="submit">Add Tour Package</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
 
         </div>
     );

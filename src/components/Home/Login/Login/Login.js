@@ -27,9 +27,9 @@ const Login = () => {
                         <img className="img-fluid" src={img} alt="" />
                     </div>
                     <div className="col-lg-6">
-                        <div className="text-center border w-50 h-50 mx-auto p-5">
-                            <h4 className="mb-4">Please Log in</h4>
-                            <button onClick={handleGoogleLogin} className="btn btn-outline-success"> <i class="fab fa-google"></i> Google login</button>
+                        <div className="text-center border h-100 mx-auto p-5">
+                            <h4 className="mb-4">PLEASE LOG IN</h4>
+                            <button onClick={handleGoogleLogin} className="btn btn-outline-success w-100"> <i className="fab fa-google"></i> Google login</button>
                         </div>
                     </div>
                 </div>

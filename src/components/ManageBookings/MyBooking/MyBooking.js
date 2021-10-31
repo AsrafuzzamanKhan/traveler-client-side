@@ -1,37 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { useParams } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
 
-const ManageAllOrders = () => {
-    const [manageOrders, setManageOrders] = useState([]);
+const MyBooking = () => {
+    const { user } = useAuth();
+    const { id } = useParams();
+
+    const [myBooking, setMyBooking] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        const url = `http://localhost:5000/myBookings/${id}`;
+        fetch(url)
             .then(res => res.json())
-            .then(data => setManageOrders(data))
+            .then(data => setMyBooking(data));
+
     }, []);
 
 
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure want to delete?');
-        if (proceed) {
-            fetch(`http://localhost:5000/manageAllBooking/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        const remaining = manageOrders.filter(order => order._id !== id);
-                        setManageOrders(remaining)
-                    }
-                    // console.log(data);
-
-                })
-        }
-    }
-
     return (
         <div>
-
-            <h1 className=" heading-color">MANAGE ALL ORDERS </h1>
+            <h1 className="heading-color">MY BOOKINGS</h1>
+            <p>{id}</p>
+            <p>{user.displayName}</p>
+            <p>{user.booked}</p>
+            <p></p>
+            <h1>My All orders: {myBooking?.length}</h1>
             <div className=" container table-responsive ">
                 <Table striped bordered hover>
                     <thead>
@@ -42,26 +35,24 @@ const ManageAllOrders = () => {
                             <th>Phone</th>
                             <th>Address</th>
                             <th>Booking place</th>
-                            <th>Login user</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     {
-                        manageOrders?.map((pd, index) =>
+                        myBooking?.map((pd, index) =>
                         (
                             <tbody>
                                 <tr>
                                     <td>{index + 1}</td>
-                                    <td>{pd?.name}</td>
+                                    <td>{pd?.displayName}</td>
                                     <td>{pd?.email}</td>
-                                    <td>{pd?.phone}</td>
+                                    <td>{pd?.booked}</td>
                                     <td>{pd?.address}</td>
                                     <td>{pd?.booked}</td>
-                                    <td>{pd?.loginEmail}</td>
                                     {/* <td>{pd?.status}</td> */}
                                     <td> <button className="btn btn-success"> Pending</button> </td>
-                                    <td><button onClick={() => handleDelete(pd._id)} className="btn btn-danger">Delete</button></td>
+                                    {/* <td><button onClick={() => handleDelete(pd._id)} className="btn btn-danger">Delete</button></td> */}
                                 </tr>
                             </tbody>
                         ))
@@ -75,4 +66,4 @@ const ManageAllOrders = () => {
     );
 };
 
-export default ManageAllOrders;
+export default MyBooking;
