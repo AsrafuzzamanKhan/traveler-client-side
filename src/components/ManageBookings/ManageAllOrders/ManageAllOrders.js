@@ -6,7 +6,7 @@ const ManageAllOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
     const { user } = useAuth();
     const handleUpdate = id => {
-        const url = `https://arcane-tundra-73847.herokuapp.com/${id}`;
+        const url = `https://arcane-tundra-73847.herokuapp.com/manageAllBooking/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -25,7 +25,7 @@ const ManageAllOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete?');
         if (proceed) {
-            fetch(`https://arcane-tundra-73847.herokuapp.com/${id}`, {
+            fetch(`https://arcane-tundra-73847.herokuapp.com/manageAllBooking/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

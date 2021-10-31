@@ -8,7 +8,7 @@ const MyBooking = () => {
 
     const [myBooking, setMyBooking] = useState([]);
     useEffect(() => {
-        const url = `https://arcane-tundra-73847.herokuapp.com/${user?.email}`;
+        const url = `https://arcane-tundra-73847.herokuapp.com/booking/${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -19,7 +19,7 @@ const MyBooking = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete?');
         if (proceed) {
-            fetch(`https://arcane-tundra-73847.herokuapp.com/${id}`, {
+            fetch(`https://arcane-tundra-73847.herokuapp.com/manageAllBooking/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
