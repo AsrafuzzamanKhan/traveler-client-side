@@ -10,7 +10,7 @@ const SinglePackage = () => {
     const { id } = useParams()
     const [singlePack, setSinglepack] = useState({});
     useEffect(() => {
-        fetch(`https://arcane-tundra-73847.herokuapp.com/${id}`)
+        fetch(`https://arcane-tundra-73847.herokuapp.com/packageDetails/${id}`)
             .then(res => res.json())
             .then(data => setSinglepack(data))
     }, [id]);
