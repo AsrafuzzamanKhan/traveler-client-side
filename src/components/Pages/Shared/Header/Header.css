@@ -1,23 +1,28 @@
+.header{
+    background-color: #87509c;
+   
+}
 
 .header nav {
-    line-height: 45px;
+    line-height: 20px;
 }
 .header nav a{
     text-decoration: none;
     color: black;
-    margin-right: 20px;
-    padding: 5px;
-    font-size: 17px;
+    padding: 10px 20px;
+    display: block;
+    text-transform: uppercase;
+    transition: .8s;
     
 }
 .header nav a:hover{
-    background-color: lightgray;
+    background-color: #643a79;
 }
 .fas{
     
     font-size: 24px;
     margin-right: 4px;
-    color: rgb(0, 94, 39);
+    color: white
 }
 .drop ul li{
     font-size: 40px;
@@ -26,3 +31,8 @@
     font-size: 80px;
     color: chocolate;
 }
+/* .dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
