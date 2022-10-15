@@ -5,42 +5,27 @@
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.top-icon {
+  font-size: 1.5rem;
+}
+.top-h {
+  text-transform: uppercase;
+}
 
-/* .header nav {
-  line-height: 20px;
-} */
 .header nav a {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 25px;
-  color: #1c0950;
-  padding: 10px 20px;
-  margin: 0 10px;
-  /* display: block; */
-  text-transform: uppercase;
-  transition: all 0.3s;
-  border-radius: 5px;
-}
-.header nav a:hover {
-  background-color: lightblue;
-  border-radius: 5px;
-  /* padding: 5px 20px; */
-}
-.fas {
-  font-size: 24px;
-  margin-right: 4px;
   color: black;
+
+  margin: 0 10px;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+
+  display: flex;
+  align-items: center;
 }
-/* .drop ul li {
-  font-size: 40px;
-} */
-/* .drop-bar {
-  font-size: 80px;
-  color: chocolate;
-} */
-/* .dropdown{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
+.header nav a:is(:hover, :focus) {
+  color: green;
+}

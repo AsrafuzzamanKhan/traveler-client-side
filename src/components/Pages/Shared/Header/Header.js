@@ -13,12 +13,10 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg">
           <Container>
             <span>
-              <i className="fas fa-plane-departure"></i>
+              <i className="fas fa-plane-departure top-icon"></i>
             </span>
-            <h2 className="fw-bold fs-2">Traveler</h2>
-            {/* <Navbar.Brand className="fw-bold fs-2" href="/home">
-              Traveler
-            </Navbar.Brand> */}
+            <h2 className="fw-bold fs-2 mx-2 top-h">Traveler</h2>
+
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ms-auto">
@@ -31,37 +29,7 @@ const Header = () => {
                 <NavLink className="fw-bold" to="/contact">
                   Contact
                 </NavLink>
-
-                {/* <div className="dropdown me-2">
-                  <button
-                    className="btn dropdown-toggle fw-bold text-black"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Manage Packages
-                  </button>
-                  <ul className="dropdown-menu bg-light">
-                    <li className="px-2">
-                      <NavLink to={`/myBookings/${user.email}`}>
-                        My Bookings
-                      </NavLink>
-                    </li>
-                    <li className="px-2">
-                      <NavLink to="/addPackage">Add package</NavLink>
-                    </li>
-                    <li className="px-2">
-                      <NavLink to="/deletePackage">Manage package</NavLink>
-                    </li>
-                    <li className="px-2">
-                      <NavLink to="/manageAllOrders">Manage All Orders</NavLink>
-                    </li>
-                  </ul>
-                </div> */}
-
-                {/* ------------------ */}
-
+                {/* drop down  */}
                 <Navbar.Collapse id="navbar-dark-example">
                   <Nav>
                     <NavDropdown
@@ -69,18 +37,18 @@ const Header = () => {
                       title="Manage Packages"
                       menuVariant="white"
                     >
-                      <NavDropdown.Item href="#action/3.1">
+                      <NavDropdown.Item>
                         <NavLink to={`/myBookings/${user.email}`}>
                           My Bookings
                         </NavLink>
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.2">
+                      <NavDropdown.Item>
                         <NavLink to="/addPackage">Add package</NavLink>
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.3">
+                      <NavDropdown.Item>
                         <NavLink to="/deletePackage">Manage package</NavLink>
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.3">
+                      <NavDropdown.Item>
                         <NavLink to="/manageAllOrders">
                           Manage All Orders
                         </NavLink>
@@ -88,7 +56,7 @@ const Header = () => {
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
-                {/* ---------------- */}
+                {/* ------login---------- */}
 
                 {user.email && (
                   <span className="text-black  d-flex align-items-center">
@@ -97,7 +65,7 @@ const Header = () => {
                 )}
 
                 {user.email ? (
-                  <button onClick={logOut} className="btn btn-success ms-2 p-2">
+                  <button onClick={logOut} className="btn btn-success p-2 m-2">
                     Log out
                   </button>
                 ) : (

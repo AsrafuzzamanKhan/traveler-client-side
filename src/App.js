@@ -14,7 +14,6 @@ import Footer from './components/Pages/Shared/Footer/Footer';
 import Header from './components/Pages/Shared/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();

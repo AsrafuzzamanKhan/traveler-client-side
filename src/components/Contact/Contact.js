@@ -9,17 +9,17 @@ const Contact = () => {
       </div>
       <div className="row m-2 p-5 contact-container">
         <div className="col-lg-4 text-center">
-          <div className="icon">
+          <div className="c-icon ">
             <i className="fas fa-map-marker-alt"></i>
           </div>
           <div>
             <h3>Location</h3>
 
-            <p>Dhaka,Bangladesh</p>
+            <p>Dhaka, Bangladesh</p>
           </div>
         </div>
         <div className="col-lg-4 text-center">
-          <div className="icon ">
+          <div className="c-icon ">
             <i className="far fa-envelope"></i>
           </div>
           <div>
@@ -29,7 +29,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="col-lg-4 text-center">
-          <div className="icon">
+          <div className="c-icon ">
             <i className="fas fa-phone-square-alt"></i>
           </div>
           <div>

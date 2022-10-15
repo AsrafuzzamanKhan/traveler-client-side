@@ -10,7 +10,10 @@
   align-items: center;
   justify-content: center;
 }
-.icon {
+/* .contact-container h3 {
+  color: aqua;
+} */
+.c-icon {
   font-size: 24px;
   color: #e74c3c;
 }

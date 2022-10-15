@@ -4,7 +4,7 @@ import './Banner.css';
 
 const Banner = () => {
   return (
-    <div class="center">
+    <div className="center">
       <p
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
