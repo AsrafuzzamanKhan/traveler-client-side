@@ -6,8 +6,13 @@ const Package = (props) => {
   const { _id, title, image, days, cost, people, description } = props.pack;
   return (
     <div>
-      <div className="col h-100">
-        <div className="card h-100 ">
+      <div className="col h-100 p-card">
+        <div
+          className="card h-100 "
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <img src={image} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{title}</h5>

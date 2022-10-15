@@ -15,8 +15,10 @@ import Header from './components/Pages/Shared/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 function App() {
-
   return (
     <div>
       <AuthProvider>
@@ -56,7 +58,6 @@ function App() {
             <Route path="*">
               <NotFound></NotFound>
             </Route>
-
           </Switch>
           <Footer></Footer>
         </Router>

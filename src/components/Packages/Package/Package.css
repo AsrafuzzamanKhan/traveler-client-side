@@ -1,0 +1,6 @@
+.p-card {
+  transition: all 0.3s ease-in-out;
+}
+.p-card:hover {
+  transform: scale(1.08);
+}
