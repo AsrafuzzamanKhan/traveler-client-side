@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 import './Header.css';
 
@@ -12,10 +12,13 @@ const Header = () => {
       <div className="header">
         <Navbar collapseOnSelect expand="lg">
           <Container>
-            <span>
-              <i className="fas fa-plane-departure top-icon"></i>
-            </span>
-            <h2 className="fw-bold fs-2 mx-2 top-h">Traveler</h2>
+            <Link to="/home">
+              {' '}
+              <span>
+                <i className="fas fa-plane-departure top-icon"></i>
+              </span>
+              <h2 className="fw-bold fs-2 mx-2 top-h">Traveler</h2>
+            </Link>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

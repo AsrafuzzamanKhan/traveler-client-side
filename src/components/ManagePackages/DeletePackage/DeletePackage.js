@@ -14,7 +14,7 @@ const DeletePackage = () => {
     const proceed = window.confirm('Are you sure want to delete?');
     if (proceed) {
       // const url = `https://arcane-tundra-73847.herokuapp.com/${id}`;
-      const url = `https://traveler-server-site.vercel.app/${id}`;
+      const url = `https://traveler-server-site.vercel.app/packages/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

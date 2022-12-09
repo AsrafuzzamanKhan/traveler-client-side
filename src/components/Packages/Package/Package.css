@@ -1,6 +1,33 @@
 .p-card {
   transition: all 0.3s ease-in-out;
+  line-height: 1rem;
 }
 .p-card:hover {
   transform: scale(1.08);
+}
+.pack-name {
+  color: rgb(14, 14, 253);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+}
+.p-details {
+  color: blue;
+  letter-spacing: 0.01rem;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+  font-weight: 600;
+  font-size: 14px;
+}
+.card-detail {
+  letter-spacing: 0.1rem;
+}
+.book-btn {
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+  font-weight: 600;
+}
+.book-btn:hover {
+  color: black;
 }

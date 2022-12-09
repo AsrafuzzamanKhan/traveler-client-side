@@ -15,18 +15,30 @@ const Package = (props) => {
         >
           <img src={image} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">Days: {days}</p>
-            <p className="card-text">Cost: {cost} </p>
-            <p className="card-text">people:{people}</p>
-            <p className="card-text">{description}</p>
+            <h5 className="pack-name">{title}</h5>
+            <p className="card-text">
+              <span className="p-details">Days:</span>
+              {days}
+            </p>
+            <p className="card-text">
+              <span className="p-details">Cost:</span>
+              {cost}{' '}
+            </p>
+            <p className="card-text">
+              {' '}
+              <span className="p-details">People:</span>
+              {people}
+            </p>
+            <p className="card-text card-detail">{description}</p>
           </div>
 
           <div className="card-footer border-0 bg-white">
             <Link to={`/packageDetails/${_id}`}>
               {' '}
               <small className="text-muted ">
-                <button className="btn btn-success w-100">Book Now</button>
+                <button className="btn btn-success w-100 book-btn">
+                  Book Now
+                </button>
               </small>
             </Link>
           </div>

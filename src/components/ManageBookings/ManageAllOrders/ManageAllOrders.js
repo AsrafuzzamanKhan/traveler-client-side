@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
             const remaining = manageOrders.filter((order) => order._id !== id);
             setManageOrders(remaining);
           }
-          // console.log(data);
+          console.log(data);
         });
     }
   };
