@@ -7,7 +7,8 @@ import Package from '../Package/Package';
 const Packages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('https://arcane-tundra-73847.herokuapp.com/packages')
+    // fetch('https://arcane-tundra-73847.herokuapp.com/packages')
+    fetch('https://traveler-server-site.vercel.app/packages')
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);

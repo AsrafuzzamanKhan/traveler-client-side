@@ -7,7 +7,8 @@ import extraimg from '../../../images/extra/extra.jpg';
 const Activities = () => {
   const [activities, setActivities] = useState([]);
   useEffect(() => {
-    fetch('https://arcane-tundra-73847.herokuapp.com/activities')
+    // fetch('https://arcane-tundra-73847.herokuapp.com/activities')
+    fetch('https://traveler-server-site.vercel.app/activities')
       // fetch('activity.json')
       .then((res) => res.json())
       .then((data) => setActivities(data));
