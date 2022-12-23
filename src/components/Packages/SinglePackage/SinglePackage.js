@@ -11,7 +11,7 @@ const SinglePackage = () => {
   const [singlePack, setSinglepack] = useState({});
   useEffect(() => {
     // fetch(`https://arcane-tundra-73847.herokuapp.com/packageDetails/${id}`)
-    fetch(`https://traveler-server-site.vercel.app/packageDetails/${id}`)
+    fetch(`traveler-server-site-production.up.railway.app/packageDetails/${id}`)
       .then((res) => res.json())
       .then((data) => setSinglepack(data));
   }, [id]);
@@ -31,7 +31,7 @@ const SinglePackage = () => {
     data.loginEmail = userEmail;
     console.log(data.email);
     // fetch(`https://arcane-tundra-73847.herokuapp.com/booking`, {
-    fetch(`https://traveler-server-site.vercel.app/booking`, {
+    fetch(`traveler-server-site-production.up.railway.app/booking`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
