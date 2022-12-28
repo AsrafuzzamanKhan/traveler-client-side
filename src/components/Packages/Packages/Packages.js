@@ -9,7 +9,7 @@ const Packages = () => {
   useEffect(() => {
     // fetch('https://arcane-tundra-73847.herokuapp.com/packages')
     // fetch('https://traveler-server-site.vercel.app/packages')
-    fetch('traveler-server-site-production.up.railway.app/packages')
+    fetch('https://traveler-server-site-production.up.railway.app/packages')
       // fetch('http://localhost:5000/packages')
       .then((res) => res.json())
       .then((data) => setPackages(data));

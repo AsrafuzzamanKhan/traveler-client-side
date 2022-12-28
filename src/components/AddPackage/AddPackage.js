@@ -9,7 +9,10 @@ const AddPackage = () => {
   const onSubmit = (data) => {
     // axios.post('https://arcane-tundra-73847.herokuapp.com/addPackage', data)
     axios
-      .post('traveler-server-site-production.up.railway.app/addPackage', data)
+      .post(
+        'https://traveler-server-site-production.up.railway.app/addPackage',
+        data
+      )
       .then((res) => {
         if (res.data.insertedId) {
           alert('Successfully Added');

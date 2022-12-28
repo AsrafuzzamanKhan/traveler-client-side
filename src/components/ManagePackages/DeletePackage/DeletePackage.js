@@ -5,7 +5,7 @@ const DeletePackage = () => {
   const [allPackage, setAllPackage] = useState([]);
   useEffect(() => {
     // fetch("https://arcane-tundra-73847.herokuapp.com/packages")
-    fetch('traveler-server-site-production.up.railway.app/packages')
+    fetch('https://traveler-server-site-production.up.railway.app/packages')
       .then((res) => res.json())
       .then((data) => setAllPackage(data));
   }, []);
@@ -14,7 +14,7 @@ const DeletePackage = () => {
     const proceed = window.confirm('Are you sure want to delete?');
     if (proceed) {
       // const url = `https://arcane-tundra-73847.herokuapp.com/${id}`;
-      const url = `traveler-server-site-production.up.railway.app/packages/${id}`;
+      const url = `https://traveler-server-site-production.up.railway.app/packages/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

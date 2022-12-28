@@ -19,7 +19,7 @@ const ManageAllOrders = () => {
 
   useEffect(() => {
     // fetch('https://arcane-tundra-73847.herokuapp.com/booking')
-    fetch('traveler-server-site-production.up.railway.app/booking')
+    fetch('https://traveler-server-site-production.up.railway.app/booking')
       .then((res) => res.json())
       .then((data) => setManageOrders(data));
   }, []);
@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
     if (proceed) {
       // fetch(`https://arcane-tundra-73847.herokuapp.com/manageAllBooking/${id}`, {
       fetch(
-        `traveler-server-site-production.up.railway.app/manageAllBooking/${id}`,
+        `https://traveler-server-site-production.up.railway.app/manageAllBooking/${id}`,
         {
           method: 'DELETE',
         }

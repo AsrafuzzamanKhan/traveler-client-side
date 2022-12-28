@@ -8,7 +8,7 @@ const MyBooking = () => {
   const [myBooking, setMyBooking] = useState([]);
   useEffect(() => {
     // const url = `https://arcane-tundra-73847.herokuapp.com/booking/${user?.email}`;
-    const url = `traveler-server-site-production.up.railway.app/booking/${user?.email}`;
+    const url = `https://traveler-server-site-production.up.railway.app/booking/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +20,7 @@ const MyBooking = () => {
     if (proceed) {
       // fetch(`https://arcane-tundra-73847.herokuapp.com/manageAllBooking/${id}`, {
       fetch(
-        `traveler-server-site-production.up.railway.app/manageAllBooking/${id}`,
+        `https://traveler-server-site-production.up.railway.app/manageAllBooking/${id}`,
         {
           method: 'DELETE',
         }
